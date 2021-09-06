@@ -9,7 +9,8 @@
 <body>
     @foreach ($movies as $movie)
         <h4>{{ $movie->title }}</h4>
-        <img src="{{ $movie->image }}" alt="Imagem"/>
+        <p>{{$movie->country->name}}</p>
+        <img src="{{ $movie->image}}" alt="Imagem"/>
     @endforeach
 </body>
 </html>
