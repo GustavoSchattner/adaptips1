@@ -19,10 +19,12 @@ class CreateMoviesTable extends Migration
             $table->string('title',255);
             $table->string('genre',255);
             $table->string('release',255);
-            $table->text('synopsis',1000); 
+            $table->text('synopsis', 1000);
             $table->string('rating',255);
             $table->string('image')->default('');
-            $table->foreignId('country_id')->constrained('countries')->onDelete('cascade');
+
+            $table->bigInteger('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
         });
     }
 

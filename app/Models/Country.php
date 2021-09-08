@@ -2,17 +2,19 @@
 
 namespace App\Models;
 
+use App\Models\Movie;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
-{    
-    protected $fillable=[
+{
+    use HasFactory;
+
+    protected $fillable = [
         'name'
     ];
-    public function country()
-    {
-        return $this->hasOne(Movie::class, 'country_id');
+
+    public function movie() {
+        return $this->hasOne(Movie::class);
     }
-    use HasFactory;
 }

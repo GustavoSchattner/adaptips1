@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
-use App\Http\Controllers\CountryController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,9 @@ use App\Http\Controllers\CountryController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::resource('movie', MovieController::class);
-Route::resource('country', CountryController::class);
+Route::get("movies/search",[MovieController::Class,'search'])->name('movie.search');
