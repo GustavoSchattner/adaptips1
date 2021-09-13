@@ -113,6 +113,7 @@ class MovieController extends Controller
     {
         $movie = Movie::findOrFail($id);
         $movie->delete();
+        Storage::delete('public/' .$movie->image);
         return redirect('/movie')->with('success', 'Dados do filme removido com sucesso!');
     }
 

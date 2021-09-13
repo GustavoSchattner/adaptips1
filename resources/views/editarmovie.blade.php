@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Filme | Adapti PS</title>
+    @extends('layout.template')
+    @section('navbar')
 </head>
 <body>
     <form id="form-create" action="{{ route('movie.update', $movie->id) }}" method="POST" enctype="multipart/form-data">
@@ -24,5 +26,6 @@
         <button type="submit">Salvar</button>
     </form>
     <a href="{{ route('movie.index') }}">Voltar</a>
+    @section('footer')
 </body>
 </html>
