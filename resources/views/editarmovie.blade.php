@@ -1,31 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Filme | Adapti PS</title>
-    @extends('layout.template')
-    @section('navbar')
-</head>
+@extends('layout.template')
+@section('title', 'Page Title')
+@section('content')
+@section('navbar')
 <body>
     <form id="form-create" action="{{ route('movie.update', $movie->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <input value="{{ $movie->title }}" type="text" name="title" placeholder="Titulo" required>
-        <input value="{{ $movie->genre }}"type="text" name="genre" placeholder="Genero" required>
-        <select value="{{ $movie->country_id }}" name="country_id" id="country_id">
+        <br>
+        <br>
+        <br>
+        <label class="label-title" for="title">Título</label>
+        <input class="movie-title" value="{{$movie->title}}" type="text" name="title" id="title" required>
+        <label class="label-genre" for="genre">Gênero</label>
+        <input class="movie-genre" value="{{ $movie->genre}}" type="text" name="genre" id="genre" required>
+        <select name="country_id" id="country_id">
             @foreach($countries as $country)
                 <option value="{{ $country->id }}">{{ $country->name }}</option>
             @endforeach
         </select>
-        <input value="{{ $movie->release }}" type="text" name="release" placeholder="Lançamento" required>
-        <input value="{{ $movie->rating }}"type="text" name="rating" placeholder="Nota" required>
-        <textarea name="synopsis" id="synopsis" cols="30" rows="10">{{ $movie->synopsis }}</textarea>
-        <input value="storage/{{ $movie->image }}" type="file" name="image" accept="image/*">
-        <button type="submit">Salvar</button>
+        <label class="label-release" for="release">Data de lançamento</label>
+        <input class="movie-release" value="{{ $movie->release}}" type="date" name="release" id="release" required>
+        <label class="label-rating" for="rating">Nota</label>
+        <input class="movie-rating" value="{{ $movie->rating}}" type="number" name="rating" id="rating" required>
+        <label class="label-synopsis" for="synopsis">Sinopse</label>
+        <textarea class="movie-synopsis" name="synopsis" id="synopsis" cols="30" rows="10">{{$movie->synopsis}}</textarea>
+        <input class="movie-image" value="storage/{{ $movie->image}}" type="file" name="image" accept="image/*" required>
+        <button class="btn-save" type="submit">Criar Filme</button>
     </form>
-    <a href="{{ route('movie.index') }}">Voltar</a>
+    <a class="brn-back" href="{{ route('movie.index') }}">Voltar</a>
     @section('footer')
 </body>
-</html>

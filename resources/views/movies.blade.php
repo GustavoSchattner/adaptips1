@@ -1,45 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
     @extends('layout.template')
     @section('title', 'Page Title')
-    @section('navbar')
-        @parent
-        @endsection
     @section('content')
-    @endsection
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Movies | Adapti</title>
-</head>
+    <br>
+    <br>
+    <br>
+    <form class="movie-search" action ="{{route('movie.search')}}" method = "GET">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+            <button class="btn-pesquisa" type="submit">OK</button> 
+        </div>
+    </form>
+    <h1>Filmes</h1>
+    <hr/>
+</head> 
 <body>
     @section('navbar')
-    <a href="{{ route('movie.create') }}"></a>
     @foreach ($movies as $movie)
-        <br>
         <h2>{{ $movie->title }}</h2>
-        <h4>{{$movie->genre}}</h4>
-        <h4>{{$movie->country->name}}</h4>
-        <h4>{{$movie->rating}}</h4>
-        <h4>{{$movie->synopsis}}</h4>
-        <img src="/storage/{{ $movie->image }}" alt="Imagem" width="160" height="200"/>
-        <td class="text-center p-0 align-middle" width="70">
-            <form action="{{ route('movie.edit', $movie->id)}}">
+        <img class="movie-image" src="/storage/{{ $movie->image }}" alt="poster do filme {{$movie->title}}" width="160" height="200"/>
+        <form class="movie-edit" action="{{ route('movie.edit', $movie->id)}}">
                 @csrf
-                <button class="btn btn-danger btn-sm" type="submit">Editar</button>
-            </form>
-        </td>
-        <td class="text-center p-0 align-middle" width="70">
-            <form action="{{ route('movie.destroy', $movie->id)}}" method="post">
+                <button class="btn-edit" type="submit">Editar</button>
+        </form>
+        <form class="movie-destroy" action="{{ route('movie.destroy', $movie->id)}}" method="post">
                 @csrf
                 @method('DELETE')
-                <h4></h4>
-                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-            </form>
-        </td>
+                <button class="btn-destroy" type="submit">Delete</button>
+        </form>
+        <h4>{{$movie->genre}}</h4> 
+        <h4>{{$movie->country->name}}</h4>
+        <h4>{{$movie->release}}</h4>
+        <h4>{{$movie->rating}}</h4>
+        <h4>{{$movie->synopsis}}</h4>
     @endforeach
-
 </body>
-</html>
+
