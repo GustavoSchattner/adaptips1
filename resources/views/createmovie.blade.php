@@ -1,11 +1,9 @@
 @extends('layout.template')
-@section('title', 'Page Title')
-@section('content')
-@section('navbar')
+    @section('title', 'Page Title')
+    @section('content')
+    @section('styles')
+    @section('navbar')
 <body>
-    <br>
-    <br>
-    <br>
     <form class="create-film" id="form-create" action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label class="label-title" for="title">Título</label>

@@ -1,7 +1,6 @@
 @extends('layout.template')
-@section('title', 'Page Title')
-@section('content')
-@section('navbar')
+    @section('title', 'Page Title')
+    @section('content')
 <body>
     <form id="form-create" action="{{ route('movie.update', $movie->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -28,5 +27,5 @@
         <button class="btn-save" type="submit">Criar Filme</button>
     </form>
     <a class="brn-back" href="{{ route('movie.index') }}">Voltar</a>
-    @section('footer')
 </body>
+

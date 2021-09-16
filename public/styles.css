@@ -1,0 +1,145 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  textarea:focus, input:focus, select:focus {
+    outline: 100px;
+    outline-color:white;
+} 
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul, a {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    text-decoration: none;
+    color: white;
+  }
+
+  h3{
+    width: 800px;
+    font-size: 48px;
+    position: relative; top: 200px;
+    text-align: center; 
+    font-family: 'Baloo 2', cursive;
+  }
+
+  body{
+    background-color: var(--back-color);
+    background-repeat: no-repeat;
+    Background-attachment: scroll;
+    background-position: center;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :root{
+      --main-color: #33D6E7;
+      --back-color: #121C25;
+  }
+
+.navbar{
+    background-color: var(--back-color);
+    height: 50px;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    position: fixed; top: 0px;
+    z-index: 0;
+}
+
+
+.movie-search{
+    position: fixed; top:10px; right: 30px;
+    z-index: 1;
+}
+input{
+    width: 320px;
+    height: 40px;
+    color: white;
+}
+
+.searchbar{
+    border-radius: 100px;
+    border-color: white;
+    background-color:var(--back-color);
+}
+
+.home-icons{
+    box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0);
+    border-bottom: 0px;
+    border:none;
+    background-color:var(--back-color);
+    color: white;
+    position: fixed; top: 22px; left: 210px;
+}
+.create-icons{
+    box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0);
+    border-bottom: 0px;
+    border:none;
+    background-color:var(--back-color);
+    color: white;
+    position: fixed; top: 22px; left: 360px;
+}
+.btn-inicio{
+    font-size: 18px;
+    position: fixed; top: 25px; left: 250px;
+    font-family: 'Nunito', sans-serif;  
+}
+.btn-create{
+    font-size: 18px;
+    position: fixed; top: 25px; left: 400px;
+    font-family: 'Nunito', sans-serif;  
+}
+.linha{
+    width: 100%;
+    position: fixed; top: 50px; left:0px;
+}
+#image{
+    height: 54px;
+    width: 80px;
+    position: fixed; top: 0px;
+    z-index: 0;
+}
+
+body {
+    font-size: 80%;
+  }
+  
+main {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+main div {
+    padding: 15px;
+    max-width: 250px;
+    margin: 5px;
+}
+.inline-blocks{
+    text-align: center;
+  }
+  .inline-blocks div {
+    display: inline-block;
+    text-align: left;
+  }
+
+.cards { 
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+ }
+ @media(max-width:600px){
+   
+ }
+

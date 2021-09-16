@@ -1,24 +1,41 @@
     @extends('layout.template')
     @section('title', 'Page Title')
     @section('content')
+
 <head>
     <br>
     <br>
     <br>
+
     <form class="movie-search" action ="{{route('movie.search')}}" method = "GET">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-            <button class="btn-pesquisa" type="submit">OK</button> 
+        <div class="submit-line">
+            <input type="text" class="searchbar" id="search" name="search" />
+            <label for="search">
+                <i class="fa fa-search"></i>
+            </label>
         </div>
     </form>
-    <h1>Filmes</h1>
-    <hr/>
+
 </head> 
-<body>
+<header>
     @section('navbar')
+    @endsection
+</header>
+<body>
     @foreach ($movies as $movie)
-        <h2>{{ $movie->title }}</h2>
-        <img class="movie-image" src="/storage/{{ $movie->image }}" alt="poster do filme {{$movie->title}}" width="160" height="200"/>
+        <main class="inline-blocls">
+        <div class="container">
+            <div class="cards">
+                <h2 class="movie-title">{{ $movie->title }}</h2>
+                <img class="movie-image" src="/storage/{{ $movie->image }}" alt="poster do filme {{$movie->title}}" width="160" height="200"/>
+                <p>{{$movie->genre}}</p> 
+                <p>{{$movie->country->name}}</p>
+                <p>{{$movie->release}}</p>
+                <p>{{$movie->rating}}</p>
+                <p>{{$movie->synopsis}}</p>
+                </div>
+            </div>    
+        </main>
         <form class="movie-edit" action="{{ route('movie.edit', $movie->id)}}">
                 @csrf
                 <button class="btn-edit" type="submit">Editar</button>
@@ -28,11 +45,6 @@
                 @method('DELETE')
                 <button class="btn-destroy" type="submit">Delete</button>
         </form>
-        <h4>{{$movie->genre}}</h4> 
-        <h4>{{$movie->country->name}}</h4>
-        <h4>{{$movie->release}}</h4>
-        <h4>{{$movie->rating}}</h4>
-        <h4>{{$movie->synopsis}}</h4>
     @endforeach
 </body>
 
