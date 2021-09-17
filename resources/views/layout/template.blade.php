@@ -7,6 +7,7 @@
         <title>Filmes Adapti - @yield('layout')</title>
         <link rel="stylesheet" href="{{asset('/styles.css')}}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
@@ -22,24 +23,14 @@
     <header class="navbar">
             <ul> 
                 <li ><img id="image" src="/ASWOG.png" alt="Adapti Soluções Web" /></li>
-                <a class="btn-inicio" id="btn-inicio" href="/movie">Início
-                <button class="home-icons">
-                    <span class="material-icons">&#xe88a;</span>
-                </button></a>
-                <a class="btn-create" href="/movie/create">Adcionar Filme
-                <button class="create-icons">
-                    <span class="material-icons">&#xe145;</span>
-                </button></a>
-                <hr class="linha">
+                <a class="btn-inicio" id="btn-inicio" href="/movie">Início</a>
+                <a class="btn-create" href="/movie/create">Adcionar Filme</a>
+                @yield('navbar')
     </header>
     <footer class="footer">
-        <nav class="barra-inf">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <form action="https://www.facebook.com/AdaptiEmpresaJr">
-                    @csrf
-                    Desenvolvido com 💙 2021 Adapti-Soluções Web <button style="font-size:12px"><i class="fa fa-facebook-f"></i></i></button>
-                </form>
-        </nav>
+        <h4> Desenvolvido com 💙 2021 Adapti-Soluções Web <a href="https://www.instagram.com/adaptiempresajr/"><i class="fab fa-instagram"></i></a></h4> 
+        
+        @yield('footer')        
     </footer>
 </body>
 </html>
