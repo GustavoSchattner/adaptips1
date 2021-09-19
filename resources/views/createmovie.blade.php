@@ -1,4 +1,5 @@
 @extends('layout.template')
+@extends('layout.navbar')
     @section('title', 'Page Title')
     @section('content')
     @section('styles')
@@ -6,7 +7,6 @@
 <body>
     <form class="create-film" id="form-create" action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <br>
         <br>
         <br>
         <br>
@@ -39,6 +39,5 @@
             </div> 
     </form>
     <a class="btn-back" href="{{ route('movie.index') }}">Voltar</a>
-    @endsection
 </body>
 

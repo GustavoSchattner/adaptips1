@@ -17,12 +17,14 @@
     </style>
 <body>
     @show
-    <footer class="footer">
-        <h4>Desenvolvido com 💙 2021 Adapti-Soluções Web <a href="https://www.instagram.com/adaptiempresajr/"><i class="fab fa-instagram"></i></a></h4> 
-        
-        @yield('footer')        
-    </footer>
+    
+    <header class="navbar">
+                <li ></li>
+                <a class="btn-inicio" id="btn-inicio" href="/movie">Início</a>
+                <a class="btn-create" href="/movie/create">Adcionar Filme</a>
+                <img id="imagem"  src="/ASWOG.png" alt="Adapti Soluções Web" />
+                @yield('navbar')
+    </header>
 </body>
 </html>
-
 

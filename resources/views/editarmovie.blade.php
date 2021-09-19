@@ -1,4 +1,5 @@
 @extends('layout.template')
+@extends('layout.navbar')
     @section('title', 'Page Title')
     @section('content')
     @section('styles')
@@ -12,8 +13,7 @@
         <br>
         <br>
         <br>
-        <br>
-        <div class="movie-create">
+            <div class="movie-create">
             <label class="label-title" for="title">Título</label>
             <input class="create-title" value="{{$movie->title}}" type="text" name="title" id="title" required>
             <label class="label-genre" for="genre">Gênero</label>
@@ -42,6 +42,5 @@
         </div>
     </form>
     <a class="btn-back" href="{{ route('movie.index') }}">Voltar</a>
-    @endsection
 </body>
 
