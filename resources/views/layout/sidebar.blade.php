@@ -1,8 +1,23 @@
-    @extends('layout.template')
-    @section('title', 'Page Title')
-    @section('content')
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Filmes Adapti - @yield('layout')</title>
+        <link rel="stylesheet" href="{{asset('/styles.css')}}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+    </style>
 <body>
+    @show
     <div class="sidebar">
         <div class="logo-details">
             <img class="img" src="/ASWOG.png" alt="Adapti Soluções Web" />
@@ -43,12 +58,12 @@
                     <span class="links_name">Adcionar Filme</span>
                 </a>
                     <span class="tooltip">Adcionar</span>
-            </li>  
+            </li> 
             <li class="profile">
                 <div class="profile-details">
                     <img src="/gustavo.png" alt="Foto do usuário">
                     <div class="name_job">
-                        <div class="name">Gustavo Schattner</div>
+                        <div class="name">Prem Shahi</div>
                         <div class="job">Web designer</div>
                     </div>
                 </div>
@@ -80,25 +95,7 @@
             }
             }
         </script>
-        <div class="home-section">
-            @foreach ($movies as $movie)
-            <div class="cards">
-                <h2 class="movie-title">{{ $movie->title }}</h2>
-                <img class="movie-image" src="/storage/{{ $movie->image }}" alt="poster do filme {{$movie->title}}" width="160" height="200"/>
-                <p class="movie-status">Gênero: {{$movie->genre}}</p> 
-                <p class="movie-status">País: {{$movie->country->name}}</p>
-                <p class="movie-status">Data de Lançamento: {{$movie->release}}</p>
-                <p class="movie-status">Nota: {{$movie->rating}}</p>
-                <p class="movie-synopsis">Sinopse: {{$movie->synopsis}}</p>
-                <a class="btn-edit" href="{{ route('movie.edit', $movie->id)}}"><i class="fas fa-edit"></i></a>
-                <form class="movie-destroy" action="{{ route('movie.destroy', $movie->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn-destroy" type="submit"><i class="far fa-trash-alt"></i></button>
-                </form>
-            </div>
-            @endforeach
-        </div>  
 </body>
+</html>
 
 
