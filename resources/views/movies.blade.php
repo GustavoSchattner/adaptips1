@@ -31,15 +31,8 @@
                     <span class="tooltip">Início</span>
             </li>
             <li class="lista">
-                <a href="#">
-                    <i class='bx bx-user' ></i>
-                    <span class="links_name">User</span>
-                </a>
-                    <span class="tooltip">User</span>
-            </li>
-            <li class="lista">
                 <a href="/movie/create">
-                    <i class='bx bx-folder' ></i>
+                <i class="far fa-plus-square"></i>
                     <span class="links_name">Adcionar Filme</span>
                 </a>
                     <span class="tooltip">Adcionar</span>
@@ -52,7 +45,7 @@
                         <div class="job">Web designer</div>
                     </div>
                 </div>
-                <i class='bx bx-log-out' id="log_out" ></i>
+                <i  id="log_out" ></i>
             </li>
         </ul>
         @yield('sidebar')

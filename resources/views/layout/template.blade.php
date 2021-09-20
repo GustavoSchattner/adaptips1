@@ -56,9 +56,9 @@
             <div class="col social">
                 <h1>Social</h1>
                 <ul>
-                <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
-                <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
-                <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
+                <li><a href="https://www.facebook.com/AdaptiEmpresaJr"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="https://www.instagram.com/adaptiempresajr/"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://br.linkedin.com/company/adaptiempresajr"><i class="fab fa-linkedin"></i></a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

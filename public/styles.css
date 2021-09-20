@@ -245,6 +245,7 @@ img {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
+
 }
 .sidebar li img{
   height: 45px;
@@ -253,6 +254,7 @@ img {
   border-radius: 100px;
   margin-right: 10px;
 }
+
 .sidebar li.profile .name,
 .sidebar li.profile .job{
   font-size: 15px;
@@ -364,7 +366,7 @@ img {
   background: none;
   color: white;
   position: relative;
-  top:  -221px;
+  top:  -220px;
   left: 90px;
 }
 .btn-edit{
@@ -686,7 +688,7 @@ button:hover{
 }
 .social ul li {
   display: inline-block;
-  padding-right: 5px !important;
+  padding-right: 5px;
 }
 
 .footer .col ul li:hover {
@@ -743,3 +745,6 @@ button:hover{
     width:  500px;
   }
 }
+ .footer i{
+   font-size: 18px;
+ }
